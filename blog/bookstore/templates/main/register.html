@@ -1,0 +1,69 @@
+{% load static %}
+
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+/>
+{% comment %}
+<link
+  rel="stylesheet"
+  href="//use.fontawesome.com/releases/v5.0.7/css/all.css"
+/>
+{% endcomment %}
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+  integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
+  crossorigin="anonymous"
+/>
+
+<link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}" />
+
+<div class="container">
+  <div class="col-5">
+    <form method="post" action="">
+      {% csrf_token %}
+       {% comment %} {{form.as_p}} {% endcomment %}
+      {{form.username.label}}
+      <br />
+      {{form.username}}
+      <br />
+      {{form.email.label}}
+      <br />
+      {{form.email}}
+      <br />
+      {{form.password1.label}}
+      <br />
+      {% comment %} {{form.password}} {% endcomment %} {{form.password1}}
+      <br />
+      {{form.password2.label}}
+      <br />
+
+      {{form.password2}}
+      <br />
+      <!-- for recaptcha -->
+      <script src="https://www.google.com/recaptcha/api.js"></script>
+      <div
+        class="g-recaptcha"
+        data-sitekey="6Lfu9SAhAAAAAPiDldVEfBO_E_ZWGAwFUjey27U0"
+      ></div>
+      <!-- end recaptcha -->
+      <br />
+      <button type="submit" class="btn btn-primary">save</button>
+    </form>
+    do you already have a account
+    <br />
+    <a class="btn btn-secondary" href="{% url 'userlogin' %}">login</a>
+    <br />
+    return home
+    <br />
+    <a class="btn btn-dark" href="{% url 'home' %}">home</a>
+
+    <br />
+    {{form.errors}}
+    {% for msg in messages %}
+    <h4>{{msg}}</h4>
+    {% endfor %}
+   
+  </div>
+</div>

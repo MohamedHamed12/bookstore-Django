@@ -1,0 +1,137 @@
+{% extends 'main/main.html' %} {% block content %}
+<h1 class="p-5">hello from custumers in main t bookstore</h1>
+<div class="container">
+  <div class="row">
+    <div class="col align-self-start">
+      the total orders are
+      {{tot_order}} orders
+    </div>
+    <div class="col align-self-center">
+      the pending orders are
+      {{p_order}} orders    </div>
+    <div class="col align-self-end">
+        the delivered orders are
+      {{d_order}}  orders{{inprog}}
+    </div>
+  </div>
+  <div class="row pt-5">
+    <div class="col">
+      <div class="card" style="width: 18rem">
+        <div class="card-body">
+          <h5 class="card-title">custumers</h5>
+          <h6 class="card-subtitle mb-2 text-muted"><a href="#" class="btn btn-dark">create new custumers</a></h6>
+
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">name</th>
+                <th scope="col">age</th>
+          
+                <th scope="col">action</th>
+        
+              </tr>
+            </thead>
+            <tbody>
+              {% for item in custom %}
+              <tr>
+                <th scope="row">1</th>
+                <td>{{item.namee}}</td>
+                <td>{{item.age}}</td>
+                <td >
+                <a href="{% url 'profile' item.id %}"> <i class="fa-solid fa-house"></i>
+                </a> 
+                <a href="{% url 'createid' item.id %}"> <i class="fa-solid fa-cart-plus"></i></a>
+
+                </td>
+               
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">orders</h5>
+          <h6 class="card-subtitle mb-2 text-muted"><a href="{% url 'create'  %}" class="btn btn-dark">creatre new orde</a></h6>
+
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">cus</th>
+                <th scope="col">book</th>
+                <th scope="col">tage</th>
+                <th scope="col">status</th>
+                <th scope="col">action</th>
+                {% comment %}
+                <th scope="col">date</th>
+                {% endcomment %}
+              </tr>
+            </thead>
+            <tbody>
+              {% for item in order %}
+              <tr>
+                <th>{{item.cus}}</th>
+                <th>{{item.b}}</th>
+                {% comment %} {% for i in item.t %} {% endcomment %}
+                <td>
+                  {% for tag in item.t.all %} {{ tag.nname }} {% empty %} No
+                  tags! {% endfor %}
+                </td>
+                {% comment %} {% endfor %} {% endcomment %}
+                <td>{{item.sstatus}}</td>
+                <td>
+                  <a href="{% url 'update' item.id %}">  
+                    <i class="fa-solid fa-pen-to-square"></i>
+
+                  </a>
+                  <a href="{% url 'delete' item.id %}">
+                    <i class="fas fa-trash"></i>
+                  </a>
+                  
+
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row pt-5">
+    <div class="col">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+          <p class="card-text">
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </p>
+          <a href="#" class="card-link">Card link</a>
+          <a href="#" class="card-link">Another link</a>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card" style="width: 18rem">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+          <p class="card-text">
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </p>
+          <a href="#" class="card-link">Card link</a>
+          <a href="#" class="card-link">Another link</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

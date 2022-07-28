@@ -1,0 +1,59 @@
+{% extends 'main/main.html' %}
+{% load static   %}
+{% block content %}
+
+<div class="card">
+  <div class="card-body">
+
+  <form action="" method="post">
+    {% csrf_token %}
+    
+      {{fs.management_form}}
+      {% for item in fs %}
+      {{item}}
+      <br>
+      {% endfor %}
+     {% comment %} {% for item in fs %} {% endcomment %}
+     {% comment %} {{item}} {% endcomment %}
+     {% comment %} {{break}} {% endcomment %}
+     
+     
+     {% comment %} {% endfor %} {% endcomment %}
+
+   <button type="submit" class="btn btn-primary"> save</button>
+
+ </form>
+</div>
+</div>
+      
+{% endblock  %}
+
+
+{% comment %} 
+<div class="container">
+    <form class="col-3">
+  <div class="mb-3">
+    <label for="staticEmail2" class="visually-hidden">custumer</label>
+    <input type="text" class="form-control" id="inputPassword1" placeholder="">
+  </div>
+  <div class="mb-3">
+    <label for="staticEmail2" class="visually-hidden">age</label>
+    <input type="text" class="form-control" id="inputPassword2" placeholder="">
+  </div>
+  <div class="mb-3">
+    <label for="staticEmail2" class="visually-hidden">book</label>
+    <input type="text" class="form-control" id="inputPassword3" placeholder="">
+  </div>
+  <div class="mb-3">
+    <label for="staticEmail2" class="visually-hidden">price</label>
+    <input type="text" class="form-control" id="inputPassword4" placeholder="">
+  </div>
+  <div class="mb-3">
+    <label for="inputPassword2" class="visually-hidden">tag</label>
+    <input type="text" class="form-control" id="inputPassword5" placeholder="">
+  </div>
+  <div class="mb-3">
+    <button type="submit" class="btn btn-primary mb-3"> save</button>
+  </div>
+</form>
+    </div {% endcomment %}

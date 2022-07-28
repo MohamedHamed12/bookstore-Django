@@ -1,0 +1,96 @@
+{%extends 'main/main.html'%}
+{%block content%}
+<h1>hello from profiles in main t bookstore</h1>
+
+
+
+
+<div class="container">
+
+  <div class="card" >
+    <div class="card-body">
+      <h5 class="card-title">{{cus.namee}} profile</h5>
+      <p class="card-text">about {{cus.namee}}</p>
+      <a href="{% url 'createid' cus.id %}" class="btn btn-primary">create new order</a>
+    </div>
+  </div>
+  <hr>
+  <div class="card" >
+    <div class="card-body">
+      <form class="d-flex" role="search">
+        {% comment %} <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> {% endcomment %}
+        {{sfliter.form}}
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+  <hr>
+
+
+    <div class="container">
+        <div class="row">
+          <div class="col">
+           custumer name => {{cus.namee}}
+          </div>
+          <div class="col">
+            age => {{cus.age}}
+          </div>
+          <div class="col">
+            total orders => {{tord}}
+          </div>
+        </div>
+      </div>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">book name </th>
+            <th scope="col">price</th>
+            <th scope="col">status</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for item in ord  %}
+            <tr>
+                <th scope="row">1</th>
+                <td>{{item.b}}</td>
+                <td>{{item.b.price}}</td>
+                <td>{{item.sstatus}}</td>
+                <td>
+                  <a href="{% url 'update' item.id %}">  
+                    <i class="fa-solid fa-pen-to-square"></i>
+
+                  </a>
+                  <a href="{% url 'delete' item.id %}">
+                    <i class="fas fa-trash"></i>
+                  </a>
+                  
+
+                </td>
+              </tr>
+            {% endfor %}
+          {% comment %} <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+          {% endcomment %}
+           
+        </tbody>
+      </table>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      Column
+    </div>
+    <div class="col">
+      Column
+    </div>
+    <div class="col">
+      Column
+    </div>
+  </div>
+</div>
+</div>
+{%endblock%}

@@ -1,0 +1,37 @@
+{%extends 'main/main.html'%}
+
+<!-- <h1>hello from login in main t bookstoreup</h1> -->
+{%block content%}
+<!-- {%include 'main/head.html'%} -->
+<h1>hello from login in main t bookstore in</h1>
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">book name</th>
+        <th scope="col">price</th>
+        <th scope="col">descibtion</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% with name="pythoncircle" %} 
+      {% for i in boo %}
+
+      <tr>
+        <th scope="row">1</th>
+        <td>{{i.namee}}</td>
+        <td>{{i.price}}</td>
+        <td>{{i.discrib}}</td>
+        
+      </tr>
+
+      {% endfor %} {% endwith %}
+    </tbody>
+  </table>
+</div>
+
+<h1>hello from login in main t bookstore in</h1>
+
+{%endblock content%}
+<!-- <h1>hello from login in main t down</h1> -->

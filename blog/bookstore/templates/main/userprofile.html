@@ -1,0 +1,118 @@
+{% extends 'main/main.html' %}
+{% block content %}
+
+
+
+
+<h1>hello from userprofiles in main t bookstore</h1>
+
+<div class="container">
+  <a class="btn btn-outline-success" href="{% url 'profile_info' %}">profile_info</a>
+
+  <div class="card" >
+    <div class="card-body">
+      <h5 class="card-title"> customer name-> {{request.user.username}}</h5>  </h5>
+      <p class="card-text">email -> {{request.user.email}}</p>
+      {% comment %} <p class="card-text">age user-> {{request.user.}}</p> {% endcomment %}
+      {% comment %} <a href="{% url 'createid' cus.id %}" class="btn btn-primary">create new order</a> {% endcomment %}
+    </div>
+  </div>
+  <hr>
+  <div class="card" >
+    <div class="card-body">
+      <form class="d-flex" role="search">
+        {% comment %} <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> {% endcomment %}
+        {{sfliter.form}}
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+  <hr>
+
+
+    <div class="container">
+        <div class="row">
+          <div class="col">
+           custumer name => {{cus.namee}}
+          </div>
+          <div class="col">
+            age => {{cus.age}}
+          </div>
+          <div class="col">
+            total orders => {{tot_order}}
+          </div>
+          <div class="col">
+            inprograss orders => {{inprog}}
+          </div>
+          <div class="col">
+            deliverd orders => {{d_order}}
+          </div>
+          <div class="col">
+            pinding orders => {{p_order}}
+          </div>
+        </div>
+      </div>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">book name </th>
+            <th scope="col">price</th>
+            <th scope="col">status</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for item in ord  %}
+            <tr>
+                <th scope="row">1</th>
+                <td>{{item.b}}</td>
+                <td>{{item.b.price}}</td>
+                <td>{{item.sstatus}}</td>
+                <td>
+                  {% comment %} <a href="{% url 'update' item.id %}">   {% endcomment %}
+                    <i class="fa-solid fa-pen-to-square"></i>
+
+                  </a>
+                  {% comment %} <a href="{% url 'delete' item.id %}"> {% endcomment %}
+                    <i class="fas fa-trash"></i>
+                  </a>
+                  
+
+                </td>
+              </tr>
+            {% endfor %}
+          {% comment %} <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+          {% endcomment %}
+           
+        </tbody>
+      </table>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      Column
+    </div>
+    <div class="col">
+      Column
+    </div>
+    <div class="col">
+      Column
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+{% endblock content %}

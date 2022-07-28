@@ -1,0 +1,12 @@
+{% extends "main/main.html" %}
+{% block content %}
+{% comment %} <form action="{% url 'delete' ord.id %}" method="post"> {% endcomment %}
+<form action="" method="post">
+{% csrf_token %}
+
+<a href="{% url 'customer' %}">return</a>
+<button type="submit" class="btn btn-primary"> delete</button>
+
+
+</form>
+{% endblock  %}

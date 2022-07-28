@@ -1,0 +1,63 @@
+{% load static %}
+
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+/>
+{% comment %}
+<link
+  rel="stylesheet"
+  href="//use.fontawesome.com/releases/v5.0.7/css/all.css"
+/>
+{% endcomment %}
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+  integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
+  crossorigin="anonymous"
+/>
+
+<link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}" />
+<div class="container">
+  <div class="col-5">
+    <h1>hi from log</h1>
+    <div>
+      <form method="post" action="">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="exampleFormControlInput1" class="form-label"
+            >username</label
+          >
+          <input type="text" class="form-control" name="username" />
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlInput1" class="form-label"
+            >password</label
+          >
+          <input type="password" class="form-control" name="password1" />
+        </div>
+        <button type="submit" class="btn btn-primary">login</button>
+      </form>
+
+      don't have account
+      <br />
+      <a class="btn btn-dark" href="{% url 'register' %}">register</a>
+      <br />
+      <br />
+
+      <a class="btn btn-dark" href="{% url 'reset_password' %}"
+        >forget password</a
+      >
+      <br />
+      <br />
+      <a class="btn btn-dark" href="{% url 'home' %}">home</a>
+
+      {{form.errors}}
+    </div>
+
+    {% for msg in messages %}
+    <h4>{{msg}}</h4>
+    {% endfor %}
+    <h1>end</h1>
+  </div>
+</div>

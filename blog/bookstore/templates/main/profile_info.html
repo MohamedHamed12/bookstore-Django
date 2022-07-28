@@ -1,0 +1,23 @@
+
+{% extends 'main/main.html' %}
+{% load static   %} 
+
+{% block content %}
+<div class="container">
+
+  <div class="card" style="width: 18rem;">
+    <img src="{{request.user.customer.avatar.url}}" class="card-img-top" alt="cannot">
+    <div class="card-body">
+      <form action="" method="post" enctype="multipart/form-data" >
+       {% csrf_token %}
+       {{form.as_p}}
+       <button type="submit" class="btn btn-primary">save</button>
+
+      </form>
+    </div>
+  </div>
+
+
+</div>
+
+{% endblock  %}
