@@ -7,7 +7,7 @@ Welcome to the Bookstore project! This is a web application developed using the 
 1.  User Authentication:
     
     -   Users can create an account and log in to access personalized features.
-    -   Passwords are securely stored using hashing algorithms.
+  
 2.  Book Catalog:
     
     -   Users can view a collection of books available in the bookstore.
@@ -20,7 +20,6 @@ Welcome to the Bookstore project! This is a web application developed using the 
 4.  Checkout Process:
     
     -   Users can proceed to the checkout page to complete their purchase.
-    -   Secure payment options are available for a smooth transaction experience.
 5.  Owner's Special Page:
     
     -   The owner has access to a special page for managing the bookstore's inventory.
@@ -35,7 +34,7 @@ To run the Bookstore project locally, please follow these steps:
 1.  Clone the repository:
     
     ```
-    bashgit clone https://github.com/your-username/bookstore.git
+    git clone https://github.com/MohamedHamed12/bookstore-Django.git
     
     ```
     
@@ -44,21 +43,21 @@ To run the Bookstore project locally, please follow these steps:
 3.  Install the project dependencies:
     
     ```
-    bashpip install -r requirements.txt
+    pip install -r requirements.txt
     
     ```
     
 4.  Set up the database:
     
     ```
-    bashpython manage.py migrate
+    python manage.py migrate
     
     ```
     
 5.  Start the development server:
     
     ```
-    bashpython manage.py runserver
+    python manage.py runserver
     
     ```
     
@@ -74,21 +73,21 @@ If you'd like to contribute to the Bookstore project, please follow these steps:
 2.  Clone your forked repository:
     
     ```
-    bashgit clone https://github.com/your-username/bookstore.git
+    git clone https://github.com/MohamedHamed12/bookstore-Django.git
     
     ```
     
 3.  Create a new branch for your feature:
     
     ```
-    bashgit checkout -b feature-name
+    git checkout -b feature-name
     
     ```
     
 4.  Make the necessary changes and commit those changes:
     
     ```
-    bashgit add .
+    git add .
     git commit -m "Add your commit message"
     
     ```
@@ -96,7 +95,7 @@ If you'd like to contribute to the Bookstore project, please follow these steps:
 5.  Push your changes to GitHub:
     
     ```
-    bashgit push origin feature-name
+    git push origin feature-name
     
     ```
     
@@ -105,8 +104,8 @@ If you'd like to contribute to the Bookstore project, please follow these steps:
 
 ## License
 
-The Bookstore project is licensed under the [MIT License](https://chat.openai.com/LICENSE). Feel free to modify and distribute the code as per the terms of the license.
+The Bookstore project is licensed under the [MIT License]. Feel free to modify and distribute the code as per the terms of the license.
 
 ## Contact
 
-If you have any questions or suggestions regarding the Bookstore project, please feel free to contact us at [email@example.com](mailto:email@example.com).
+If you have any questions or suggestions regarding the Bookstore project, please feel free to contact us at 
