@@ -1,4 +1,4 @@
-## Bookstore in Django
+## Bookstore  (Django)
 
 Welcome to the Bookstore project! This is a web application developed using the Django framework, designed to provide users with the ability to create an account, browse a collection of books, and make purchases. Additionally, there is a special page for the owner where they can manage the bookstore's inventory by adding, deleting, and editing books.
 
